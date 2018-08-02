@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../01js/jquery/jquery-3.3.1.js"></script>
+<script>
+	$(function() {
+		var canvas = document.getElementsByTagName('canvas')[0];
+		var context = canvas.getContext('2d');
+		
+		var video = document.getElementsByTagName("video")[0];
+		
+		var snap = document.getElementById("snap");
+        var close = document.getElementById("close");
+        var start = document.getElementById("start");
+        
+        var MediaStreamTrack;
+        start.addEventListener('click', function () {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                    video: true
+                }).then(function (stream) {
+                	MediaStreamTrack=stream.getTracks()[0];
+                    //MediaStreamTrack=typeof stream.stop==='function'?stream:stream.getTracks()[1];
+                    video.src=(window.URL).createObjectURL(stream);
+                    video.play();
+                }).catch(function(err){
+                    console.log(err);
+                });
+            }else if(navigator.getMedia){
+                navigator.getMedia({
+                    video: true
+                }).then(function (stream) {
+                    MediaStreamTrack=stream.getTracks()[1];
+                    video.src=(window.webkitURL).createObjectURL(stream);
+                    video.play();
+                }).catch(function(err){
+                    console.log(err);
+                });
+            }
+        });
+        snap.addEventListener('click', function () {
+            context.drawImage(video, 0, 0,200,150);
+        });
+        close.addEventListener('click', function () {
+            MediaStreamTrack && MediaStreamTrack.stop();
+        });
+	})
+
+</script>
+</head>
+<body>
+	<video width="200px" height="150px"></video>
+	
+	<canvas width="200px" height="150px"></canvas>
+	
+	<p>
+		<button id="start">打开摄像头</button>
+		<button id="snap">截取图像</button>
+		<button id="close">关闭摄像头</button>
+	</p>
+</body>
+</html>

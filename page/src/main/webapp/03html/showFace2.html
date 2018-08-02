@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../01js/jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	var mediaStreamTrack;
+
+	function getUserMedia(constraints,success,error){
+		debugger
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+			//最新的标准API
+			navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+		} else if (navigator.webkitGetUserMedia) {
+			//webkit核心浏览器
+			navigator.webkitGetUserMedia(constraints,success, error)
+		} else if (navigator.mozGetUserMedia) {
+			//firfox浏览器
+			navigator.mozGetUserMedia(constraints, success, error);
+		} else if (navigator.getUserMedia) {
+	        //旧版API
+	        navigator.getUserMedia(constraints, success, error);
+		}
+	}
+	
+	function success(stream) {
+		//兼容webkit核心浏览器
+		let compatibleURL = window.URL || window.webkitURL;
+		console.log(stream.getTracks());
+		
+		debugger
+		//将视频流设置为video元素的源
+		//$("#video").src = compatibleURL.createObjectURL(stream);
+		$("#video").srcObject = stream;
+		
+		$("#video").play();
+	}
+
+	function error(error) {
+		console.log(error);
+	}
+
+	var open=function(){
+		getUserMedia({video: true}, success, error);
+	};
+	
+	var close=function(){
+		mediaStreamTrack && mediaStreamTrack.stop();
+	};
+	
+	var snap=function(){
+		var canvas = $("#canvas");
+	    var context = canvas.getContext('2d');
+	    context.drawImage(video, 0, 0, 600, 400);
+	};
+	
+	$(function() {
+		
+	})
+
+</script>
+</head>
+<body>
+
+	<video id="video" width="600px" height="200px"></video>
+
+	<canvas id="canvas" width="600px" height="200px"></canvas>
+
+	<p>
+		<button id="open" onclick="open()">打开摄像头</button>
+		<button id="snap" onclick="snap()">截取图像</button>
+		<button id="close" onclick="close()">关闭摄像头</button>
+	</p>
+	
+	
+</body>
+</html>

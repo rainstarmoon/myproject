@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/01js/jquery/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	var mediaStreamTrack;
+
+	function getUserMedia(constraints,success,error){
+		// 这儿的流程一般都是走第一个
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia){
+			//最新的标准API
+			navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+		} else if (navigator.webkitGetUserMedia) {
+			//webkit核心浏览器
+			navigator.webkitGetUserMedia(constraints,success, error)
+		} else if (navigator.mozGetUserMedia) {
+			//firfox浏览器
+			navigator.mozGetUserMedia(constraints, success, error);
+		} else if (navigator.getUserMedia) {
+	        //旧版API
+	        navigator.getUserMedia(constraints, success, error);
+		}
+	}
+	
+	function success(stream) {
+		mediaStreamTrack=stream.getTracks()[0]
+		//将视频流设置为video元素的源
+		
+		//可以的写法	感觉慢一点
+		//兼容webkit核心浏览器
+		//let compatibleURL = window.URL || window.webkitURL;
+		//$("#video")[0].src = compatibleURL.createObjectURL(stream);
+		//$("#video").prop("src",compatibleURL.createObjectURL(stream));
+		
+		// 可以的写法 感觉快一点
+		//$("#video")[0].srcObject = stream;
+		$("#video").prop("srcObject",stream);
+		
+		// 这里能怎么写呢？
+		$("#video")[0].play();
+	}
+
+	function error(error) {
+		console.log(error);
+	}
+
+	var start = function(){
+		getUserMedia({video: true}, success, error);
+	};
+	
+	var end=function(){
+		mediaStreamTrack && mediaStreamTrack.stop();
+	};
+	
+	var snap=function(){
+		let canvas = $("#canvas")[0];
+	    let context = canvas.getContext('2d');
+	    context.drawImage(video, 0, 0, 600, 400);
+	    
+	    var base64Data = canvas.toDataURL("image/png");
+	    
+	    //canvas.toBlob(callback, mimeType, qualityArgument)
+	    canvas.toBlob(function (loginImage) {
+	    	var formData = new FormData();
+	    	formData.append("files", loginImage);
+	   		$.ajax({
+	   			type:'POST',
+	   			url:'/file/upload/image',
+	   			data:formData,
+	   			processData: false,
+	   			contentType: false,
+	   			cache: false,
+	   		}).done(function(data){
+	   			console.log(data);
+	   		}).fail(function(data){
+	   			console.log(data);
+	   		});
+		});
+	};
+</script>
+
+</head>
+<body>
+
+	<video id="video" width="600px" height="400px"></video>
+
+	<canvas id="canvas" width="600px" height="400px"></canvas>
+
+	<p>
+		<button onclick="start()">打开摄像头</button>
+		<button onclick="snap()">截取图像</button>
+		<button onclick="end()">关闭摄像头</button>
+	</p>
+
+</body>
+</html>

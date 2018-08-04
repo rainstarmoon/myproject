@@ -6,3 +6,7 @@ spring:
         active: dev
     application:
         name: face-recognition
+
+context:
+  initializer:
+    classes: com.myproject.config.OpencvInitializer

@@ -20,6 +20,8 @@
 		<module>../face-recognition</module>
 		<module>../login</module>
 		<module>../page</module>
+		<module>../eureka-server</module>
+		<module>../service-ribbon</module>
 	</modules>
 
 	<properties>
@@ -27,6 +29,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<springboot.version>2.0.3.RELEASE</springboot.version>
+		<springcloud.version>Finchley.SR1</springcloud.version>
 	</properties>
 
 	<dependencies>
@@ -36,32 +39,39 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<!-- guava -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>25.1-jre</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<!-- commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 
-
-		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<!-- commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.6</version>
 		</dependency>
 
-
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- spring-cloud -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${springcloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<!-- springboot 测试 -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -105,7 +115,7 @@
 				<version>1.4.0</version>
 			</dependency>
 
-			<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+			<!-- httpclient -->
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>

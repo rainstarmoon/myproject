@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestController extends BaseController {
 
-	
+	@RequestMapping("/test")
+	public Object test() {
+		return "showFace";
+	}
 
 }

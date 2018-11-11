@@ -1,4 +1,4 @@
-package com.myproject.config;
+package com.myproject.login.config;
 
 import org.apache.shiro.authc.pam.AllSuccessfulStrategy;
 import org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy;

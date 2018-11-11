@@ -1,4 +1,4 @@
-package com.myproject.config;
+package com.myproject.login.config;
 
 import java.io.File;
 

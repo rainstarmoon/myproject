@@ -1,9 +1,8 @@
-package com.myproject.config;
+package com.myproject.login.config;
 
 import java.util.List;
 import java.util.Map;
 
-import org.apache.shiro.authc.pam.AllSuccessfulStrategy;
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
@@ -27,7 +26,7 @@ public class ShiroConfiguration {
 		shiroFilterFactoryBean.setSuccessUrl("/loginSuccess");
 		Map<String, String> filterChainDefinitionMap = Maps.newLinkedHashMap();
 		filterChainDefinitionMap.put("/01js/**", "anon");
-		// 少进入一次校验
+		// 少进行一次校验
 		filterChainDefinitionMap.put("/login", "anon");
 		filterChainDefinitionMap.put("/**", "authc");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);

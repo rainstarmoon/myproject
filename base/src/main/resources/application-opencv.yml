@@ -1,0 +1,4 @@
+library:
+  opencv:
+    path: D:/opencv/build/java/x64/opencv_java342.dll
+    haarcascade_frontalface_alt: D:/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml

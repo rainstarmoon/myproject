@@ -1,25 +1,5 @@
-library:
-  opencv:
-    path: D:/opencv/build/java/x64/opencv_java342.dll
-    haarcascade_frontalface_alt: D:/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml
-
 spring:
-  http:
-    encoding:
-      force: true
-      charset: UTF-8
-      
-  freemarker:
-    allow-request-override: false
-    cache: false
-    check-template-location: true
-    charset: UTF-8
-    content-type: text/html; charset=utf-8
-    expose-request-attributes: false
-    expose-session-attributes: false
-    expose-spring-macro-helpers: false
-    suffix: .html
-    template-loader-path: classpath:/templates/03html
-    
-  resources:
-    static-locations: classpath:/templates/
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/myproject?charset=utf8mb4&useSSL=false
+    username: root
+    password: root

@@ -1,4 +1,6 @@
-package com.myproject.config;
+package com.myproject.login.config;
+
+import java.util.Objects;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -20,6 +22,9 @@ public class FaceRealm extends AuthorizingRealm {
 		FaceImageUsernamePasswordToken faceImageUsernamePasswordToken = (FaceImageUsernamePasswordToken) token;
 		Object principal = faceImageUsernamePasswordToken.getPrincipal();
 		Object credentials = faceImageUsernamePasswordToken.getCredentials();
+		if (principal == null || !Objects.equals(principal, "admin")) {
+			return null;
+		}
 		SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(principal, credentials,
 				this.getName());
 		return authenticationInfo;

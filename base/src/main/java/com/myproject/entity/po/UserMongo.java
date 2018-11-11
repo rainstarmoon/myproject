@@ -2,20 +2,16 @@ package com.myproject.entity.po;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "t_user")
-public class User implements Serializable {
+@Document(collection = "t_user")
+public class UserMongo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@javax.persistence.Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	@org.springframework.data.annotation.Id
+	private ObjectId objectId;
 
 	private String username;
 
@@ -23,12 +19,12 @@ public class User implements Serializable {
 
 	private Boolean isExist;
 
-	public Long getId() {
-		return id;
+	public ObjectId getObjectId() {
+		return objectId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setObjectId(ObjectId objectId) {
+		this.objectId = objectId;
 	}
 
 	public String getUsername() {

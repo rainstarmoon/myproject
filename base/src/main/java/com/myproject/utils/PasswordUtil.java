@@ -38,35 +38,35 @@ public class PasswordUtil {
 
 	// 初始化常用密码集
 	public static void initCommonPasswordSet() {
-		List<Character> temp_password_set = Lists.newArrayList();
-		temp_password_set.addAll(NUMBER_SET);
-		temp_password_set.addAll(ENGLISH_SMALL_SET);
-		temp_password_set.add('.');
-		temp_password_set.add('_');
-		temp_password_set.add(':');
-		temp_password_set.add('/');
-		PASSWORD_SET_LAST_INDEX = temp_password_set.size() - 1;
-		PASSWORD_SET = ArrayUtils.toPrimitive(temp_password_set.toArray(new Character[temp_password_set.size()]));
+		List<Character> tempPasswordSet = Lists.newArrayList();
+		tempPasswordSet.addAll(NUMBER_SET);
+		tempPasswordSet.addAll(ENGLISH_SMALL_SET);
+		tempPasswordSet.add('.');
+		tempPasswordSet.add('_');
+		tempPasswordSet.add(':');
+		tempPasswordSet.add('/');
+		PASSWORD_SET_LAST_INDEX = tempPasswordSet.size() - 1;
+		PASSWORD_SET = ArrayUtils.toPrimitive(tempPasswordSet.toArray(new Character[tempPasswordSet.size()]));
 	}
 
 	// 密码集初始化
 	public static void initPasswordSet(boolean needNumber, boolean needSmallEnglish, boolean needBigEnglish,
 			boolean needSymbol) {
-		List<Character> temp_password_set = Lists.newArrayList();
+		List<Character> tempPasswordSet = Lists.newArrayList();
 		if (needNumber) {
-			temp_password_set.addAll(NUMBER_SET);
+			tempPasswordSet.addAll(NUMBER_SET);
 		}
 		if (needSmallEnglish) {
-			temp_password_set.addAll(ENGLISH_SMALL_SET);
+			tempPasswordSet.addAll(ENGLISH_SMALL_SET);
 		}
 		if (needBigEnglish) {
-			temp_password_set.addAll(ENGLISH_BIG_SET);
+			tempPasswordSet.addAll(ENGLISH_BIG_SET);
 		}
 		if (needSymbol) {
-			temp_password_set.addAll(SYMBOL_SET);
+			tempPasswordSet.addAll(SYMBOL_SET);
 		}
-		PASSWORD_SET_LAST_INDEX = temp_password_set.size() - 1;
-		PASSWORD_SET = ArrayUtils.toPrimitive(temp_password_set.toArray(new Character[temp_password_set.size()]));
+		PASSWORD_SET_LAST_INDEX = tempPasswordSet.size() - 1;
+		PASSWORD_SET = ArrayUtils.toPrimitive(tempPasswordSet.toArray(new Character[tempPasswordSet.size()]));
 	}
 
 	// 获取下一个密码

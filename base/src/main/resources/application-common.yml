@@ -62,23 +62,19 @@ spring:
     hibernate:
       ddl-auto: update
 
-  data:
-    mongodb:
-      uri: mongodb://127.0.0.1:27017/myproject
-      #username:
-      #password:
+  redis:
+    database: 0
+    timeout: 60s
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
 
 mybatis:
   type-aliases-package: com.myproject.entity
   mapper-locations: classpath:mapper/*.xml
-
-
-
-
-
-
-
-
 
 
 

@@ -64,13 +64,13 @@
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
-		
+
 		<!-- commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
-		
+
 		<!-- commons-pool2 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -108,6 +108,13 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
+
+			<!-- springboot actuator -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
 				<version>${springboot.version}</version>
 			</dependency>
 
@@ -157,6 +164,13 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
+
+			<!-- elasticsearch -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 				<version>${springboot.version}</version>
 			</dependency>
 

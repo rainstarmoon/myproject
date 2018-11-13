@@ -9,6 +9,12 @@ spring:
       uri: mongodb://127.0.0.1:27017/myproject
       #username:
       #password:
+    
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+      repositories:
+        enabled: true
 
   redis:
     host: 127.0.0.1

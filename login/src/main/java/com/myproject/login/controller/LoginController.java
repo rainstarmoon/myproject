@@ -28,8 +28,8 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String doLogin() {
 		Subject subject = SecurityUtils.getSubject();
-		// FaceImageUsernamePasswordToken token = new FaceImageUsernamePasswordToken(new File("E:\\workspace_myself\\git\\myproject\\info\\20160407_233616.jpg"));
-		FaceImageUsernamePasswordToken token = new FaceImageUsernamePasswordToken("xiazeyu","1234");
+		FaceImageUsernamePasswordToken token = new FaceImageUsernamePasswordToken(new File("E:\\workspace_myself\\git\\myproject\\info\\20160407_233616.jpg"));
+		//FaceImageUsernamePasswordToken token = new FaceImageUsernamePasswordToken("xiazeyu","1234");
 		// 登录
 		try {
 			subject.login(token);

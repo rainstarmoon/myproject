@@ -1,5 +1,7 @@
 package com.myproject;
 
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.alibaba.fastjson.JSON;
 import com.myproject.entity.po.User;
 import com.myproject.entity.po.UserMongo;
+import com.myproject.entity.po.UserSearch;
 import com.myproject.login.dao.UserRepository;
+import com.myproject.login.dao.elasticsearch.UserElasticsearchRepository;
 import com.myproject.login.dao.mongodb.UserMongoRepository;
 import com.myproject.login.service.UserService;
 import com.myproject.utils.RedisUtil;
@@ -23,6 +27,9 @@ public class LoginApplicationTests {
 	
 	@Autowired
 	private UserMongoRepository userMongoRepository;
+	
+	@Autowired
+	private UserElasticsearchRepository userElasticsearchRepository;
 	
 	@Autowired
 	private UserService userService;
@@ -73,6 +80,23 @@ public class LoginApplicationTests {
 	@Test
 	public void test06() {
 		System.out.println(JSON.toJSONString(redisUtil.get("test")));
+	}
+	
+	@Test
+	public void test07() {
+		UserSearch user = new UserSearch();
+		user.setId("xia");
+		user.setUsername("xiazeyu");
+		user.setPassword("1234");
+		user.setIsExist(true);
+		userElasticsearchRepository.save(user);
+	}
+	
+	@Test
+	public void test08() {
+		Optional<UserSearch> findById = userElasticsearchRepository.findById("xia");
+		UserSearch userSearch = findById.get();
+		System.out.println(JSON.toJSONString(userSearch));
 	}
 
 }

@@ -3,7 +3,7 @@ server:
     
 spring:
   profiles:
-    active: dev
+    active: common,dev
   application:
     name: ribbon-service
 

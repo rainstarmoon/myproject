@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.myproject.login.config.FaceImageUsernamePasswordToken;
+import com.myproject.service.face.FaceService;
 
 @Controller
 @RequestMapping
@@ -19,10 +21,14 @@ public class LoginController {
 	@Value("${server.port}")
 	private String port;
 	
+	@Autowired
+	private FaceService faceService;
+	
 	@RequestMapping(value = "/test")
 	@ResponseBody
 	public Object test01(String name) {
-		return name + ":" + port;
+		return faceService.testGet2("xiazeyu", 11);
+		//return name + ":" + port;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

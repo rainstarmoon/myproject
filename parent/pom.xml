@@ -23,6 +23,7 @@
 		<module>../eureka-server</module>
 		<module>../ribbon-service</module>
 		<module>../feign-service</module>
+		<module>../feign-service-impl</module>
 	</modules>
 
 	<properties>

@@ -34,13 +34,13 @@
         <prudent>false</prudent>
     </appender>
     
-    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+    <!-- <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<destination>localhost:4560</destination>
-        <!-- encoder必须配置,有多种可选 -->
+        encoder必须配置,有多种可选
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
 			<customFields>{"appname":"myproject_log"}</customFields>
         </encoder>
-    </appender>
+    </appender> -->
 
     <!-- sql -->
 	<!--  <logger name="com.project.dao" additivity="false" level="DEBUG">
@@ -76,7 +76,7 @@
 	<springProfile name="dev">
 	    <root level="INFO"> 
 			<appender-ref ref="console" />
-			<appender-ref ref="file" />
+			<!-- <appender-ref ref="file" /> -->
 			<!-- <appender-ref ref="logstash" /> -->
 		</root>
 	</springProfile>

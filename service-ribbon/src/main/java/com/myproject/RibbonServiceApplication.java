@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient
-public class ServiceRibbonApplication {
+public class RibbonServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run( ServiceRibbonApplication.class, args );
+        SpringApplication.run(RibbonServiceApplication.class, args );
     }
 
     @Bean

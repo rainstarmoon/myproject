@@ -1,16 +1,16 @@
 server:
-    port: 9000
+  port: 9010
     
 spring:
-    profiles:
-        active: dev
-    application:
-        name: face-recognition
+  profiles:
+    active: dev
+  application:
+    name: face-recognition
 
 eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8090/eureka/
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
 
 context:
   initializer:

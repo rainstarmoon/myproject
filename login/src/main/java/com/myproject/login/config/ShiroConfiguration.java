@@ -28,7 +28,8 @@ public class ShiroConfiguration {
 		filterChainDefinitionMap.put("/01js/**", "anon");
 		// 少进行一次校验
 		filterChainDefinitionMap.put("/login", "anon");
-		filterChainDefinitionMap.put("/**", "authc");
+		// filterChainDefinitionMap.put("/**", "authc");
+		filterChainDefinitionMap.put("/**", "anon");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return shiroFilterFactoryBean;
 	}

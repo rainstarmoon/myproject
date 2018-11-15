@@ -1,11 +1,11 @@
 server:
-  port: 8099
-    
+  port: 8098
+
 spring:
   profiles:
     active: dev
   application:
-    name: ribbon-service
+    name: feign-service
 
 eureka:
   client:

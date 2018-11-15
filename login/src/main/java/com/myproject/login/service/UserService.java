@@ -4,6 +4,6 @@ import com.myproject.entity.po.User;
 
 public interface UserService {
 	
-	User queryByUsername(String username);
+	// User queryByUsername(String username);
 	
 }

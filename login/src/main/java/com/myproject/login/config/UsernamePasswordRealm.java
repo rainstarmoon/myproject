@@ -31,10 +31,10 @@ public class UsernamePasswordRealm extends AuthorizingRealm{
 		if(principal==null) {
 			return null;
 		}
-		User user = userService.queryByUsername(principal.toString());
-		if(!user.getPassword().equals(String.valueOf(credentials))) {
-			return null;
-		}
+		//User user = userService.queryByUsername(principal.toString());
+		//if(!user.getPassword().equals(String.valueOf(credentials))) {
+		//	return null;
+		//}
 		
 		SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(principal, credentials,
 				this.getName());

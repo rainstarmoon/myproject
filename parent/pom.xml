@@ -21,7 +21,8 @@
 		<module>../login</module>
 		<module>../page</module>
 		<module>../eureka-server</module>
-		<module>../service-ribbon</module>
+		<module>../ribbon-service</module>
+		<module>../feign-service</module>
 	</modules>
 
 	<properties>

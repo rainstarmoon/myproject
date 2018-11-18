@@ -11,6 +11,9 @@ public class TestController extends BaseController {
 
 	@RequestMapping("/test")
 	public Object test(HttpServletRequest request,String name, Integer age) {
+		
+		
+		
 		return name + ":"+request.getMethod()+":" + age;
 	}
 

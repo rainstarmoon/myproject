@@ -27,8 +27,8 @@ public class LoginController {
 	@RequestMapping(value = "/test")
 	@ResponseBody
 	public Object test01(String name) {
-		return faceService.testGet2("xiazeyu", 11);
-		//return name + ":" + port;
+		//return faceService.testGet2("xiazeyu", 11);
+		return name + ":" + port;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

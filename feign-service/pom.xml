@@ -13,6 +13,12 @@
 	<artifactId>feign-service</artifactId>
 
 	<dependencies>
+	
+		<dependency>
+			<groupId>com.myproject</groupId>
+			<artifactId>base</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.myproject</groupId>

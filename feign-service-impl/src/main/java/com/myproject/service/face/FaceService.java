@@ -2,11 +2,13 @@ package com.myproject.service.face;
 
 import org.springframework.cloud.openfeign.FeignClient;
 
+import com.myproject.service.face.impl.FaceServiceHystric;
+
 import feign.Body;
 import feign.Param;
 import feign.RequestLine;
 
-@FeignClient(value = "face-recognition")
+@FeignClient(value = "face-recognition",fallback=FaceServiceHystric.class)
 public interface FaceService {
 
 //	@RequestMapping(value = "/test/test", method = RequestMethod.GET)

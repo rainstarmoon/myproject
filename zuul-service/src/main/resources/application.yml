@@ -1,0 +1,22 @@
+server:
+  port: 8091
+    
+spring:
+  profiles:
+    active: common,dev
+  application:
+    name: zuul-service
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
+
+zuul:
+  routes:
+    login:
+      path: /login/**
+      serviceId: login
+    face-recognition:
+      path: /face-recognition/**
+      serviceId: face-recognition

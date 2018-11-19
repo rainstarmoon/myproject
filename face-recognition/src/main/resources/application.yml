@@ -3,7 +3,7 @@ server:
     
 spring:
   profiles:
-    active: common,dev,opencv
+    active: common,dev,opencv,mvc
   application:
     name: face-recognition
 

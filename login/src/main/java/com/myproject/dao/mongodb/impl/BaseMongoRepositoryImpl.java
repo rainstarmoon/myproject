@@ -1,4 +1,4 @@
-//package com.myproject.login.dao.mongodb.impl;
+//package com.myproject.dao.mongodb.impl;
 //
 //import java.io.Serializable;
 //
@@ -6,7 +6,7 @@
 //import org.springframework.data.mongodb.repository.query.MongoEntityInformation;
 //import org.springframework.data.mongodb.repository.support.SimpleMongoRepository;
 //
-//import com.myproject.login.dao.mongodb.BaseMongoRepository;
+//import com.myproject.dao.mongodb.BaseMongoRepository;
 //
 //public class BaseMongoRepositoryImpl<T, ID extends Serializable> extends SimpleMongoRepository<T, ID>
 //		implements BaseMongoRepository<T, ID> {

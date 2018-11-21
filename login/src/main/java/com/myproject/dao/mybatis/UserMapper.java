@@ -1,4 +1,4 @@
-//package com.myproject.login.dao.mybatis;
+//package com.myproject.dao.mybatis;
 //
 //import org.apache.ibatis.annotations.Mapper;
 //import org.apache.ibatis.annotations.Param;

@@ -1,4 +1,4 @@
-package com.myproject.login.dao.mongodb;
+package com.myproject.dao.mongodb;
 
 import com.myproject.entity.po.UserMongo;
 

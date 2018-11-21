@@ -1,4 +1,4 @@
-//package com.myproject.login.dao;
+//package com.myproject.dao;
 //
 //import java.io.Serializable;
 //

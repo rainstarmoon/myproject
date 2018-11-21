@@ -1,4 +1,4 @@
-package com.myproject.login.service.impl;
+package com.myproject.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.myproject.entity.po.User;
 //import com.myproject.login.dao.UserRepository;
 //import com.myproject.login.dao.mybatis.UserMapper;
-import com.myproject.login.service.UserService;
+import com.myproject.service.UserService;
 
 @Service
 //@Transactional

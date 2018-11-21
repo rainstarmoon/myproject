@@ -1,4 +1,4 @@
-//package com.myproject.login.dao.elasticsearch;
+//package com.myproject.dao.elasticsearch;
 //
 //import com.myproject.entity.po.UserSearch;
 //

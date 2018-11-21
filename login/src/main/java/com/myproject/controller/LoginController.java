@@ -1,4 +1,4 @@
-package com.myproject.login.controller;
+package com.myproject.controller;
 
 import java.io.File;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.myproject.login.config.FaceImageUsernamePasswordToken;
+import com.myproject.config.FaceImageUsernamePasswordToken;
 import com.myproject.service.face.FaceService;
 
 @Controller

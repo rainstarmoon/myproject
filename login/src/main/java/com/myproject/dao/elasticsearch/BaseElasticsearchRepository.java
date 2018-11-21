@@ -1,4 +1,4 @@
-//package com.myproject.login.dao.elasticsearch;
+//package com.myproject.dao.elasticsearch;
 //
 //import java.io.Serializable;
 //

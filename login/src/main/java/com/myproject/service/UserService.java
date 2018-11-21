@@ -1,4 +1,4 @@
-package com.myproject.login.service;
+package com.myproject.service;
 
 import com.myproject.entity.po.User;
 

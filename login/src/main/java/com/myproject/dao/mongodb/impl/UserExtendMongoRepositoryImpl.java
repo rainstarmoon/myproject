@@ -1,4 +1,4 @@
-//package com.myproject.login.dao.mongodb.impl;
+//package com.myproject.dao.mongodb.impl;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.mongodb.core.MongoTemplate;
@@ -6,7 +6,7 @@
 //import org.springframework.data.mongodb.core.query.Query;
 //
 //import com.myproject.entity.po.UserMongo;
-//import com.myproject.login.dao.mongodb.UserExtendMongoRepository;
+//import com.myproject.dao.mongodb.UserExtendMongoRepository;
 //
 //public class UserExtendMongoRepositoryImpl implements UserExtendMongoRepository {
 //

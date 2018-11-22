@@ -15,3 +15,8 @@ spring:
           searchPaths: base/src/main/resources
           username: 
           password: 
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/

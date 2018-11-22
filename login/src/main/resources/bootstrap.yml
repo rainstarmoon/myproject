@@ -1,0 +1,13 @@
+server:
+  port: 9001
+    
+spring:
+  profiles:
+    active: log
+  application:
+    name: login
+  cloud:
+    config:
+      label: master
+      profile: common,dev,mvc
+      uri: http://localhost:8089/

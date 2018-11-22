@@ -1,0 +1,31 @@
+server:
+  port: 9001
+    
+spring:
+  profiles:
+    active: common,dev,mvc
+  application:
+    name: login
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka/
+
+#actuator监控
+management:
+  server:
+    #设置监控服务端口
+    port: 19000
+  security:
+    enabled: false
+  endpoints:
+    #设置端点是否可用 默认只有shutdown可用
+    enabled-by-default: true
+    web:
+      #设置是否暴露端点 默认只有health和info可见
+      exposure:
+        #包括所有端点
+        include: "*" #注意需要添加引号
+        #排除端点
+        exclude: shutdown

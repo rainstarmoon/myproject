@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.myproject.config.FaceImageUsernamePasswordToken;
 import com.myproject.service.face.FaceService;
+import com.myproject.utils.SpringContextUtil;
 
 @Controller
 @RequestMapping
@@ -21,14 +22,14 @@ public class LoginController {
 	@Value("${server.port}")
 	private String port;
 	
-	@Autowired
+	//@Autowired
 	private FaceService faceService;
 	
 	@RequestMapping(value = "/test")
 	@ResponseBody
 	public Object test01(String name) {
-		//return faceService.testGet2("xiazeyu", 11);
-		return name + ":" + port;
+		// return faceService.testGet2("xiazeyu", 11);
+		return name + ":" + port + ":" + SpringContextUtil.getProperty("spring.http.encoding.force");
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

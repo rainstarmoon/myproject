@@ -75,3 +75,12 @@ hystrix:
           thread:
             timeoutInMilliseconds: 5000
 
+
+
+
+
+
+
+
+
+

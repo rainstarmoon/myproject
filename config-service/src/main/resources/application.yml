@@ -1,0 +1,17 @@
+server:
+  port: 8089
+    
+spring:
+  profiles:
+    active: log
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/rainstarmoon/myproject
+          searchPaths: base/src/main/resources
+          username: 
+          password: 

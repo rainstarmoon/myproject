@@ -4,6 +4,7 @@ server:
 spring:
   profiles:
     active: log
+    #active: native
   application:
     name: config-server
   cloud:
@@ -14,7 +15,11 @@ spring:
           uri: https://github.com/rainstarmoon/myproject
           searchPaths: base/src/main/resources
           username: 
-          password: 
+          password:
+      
+      #server:
+        #native:
+          #search-locations: classpath:/config
 
 eureka:
   client:

@@ -2,18 +2,18 @@ server:
   port: 9001
     
 spring:
-  profiles:
-    active: log
+  #profiles:
+    #active: log
   application:
     name: login
   cloud:
     config:
       label: master
-      profile: common,dev,mvc
-      #uri: http://localhost:8089/
-      discovery: 
-        enabled: true
-        serviceId: config-server
+      profile: common,dev,mvc,log
+      uri: http://localhost:8089/
+      #discovery: 
+        #enabled: true
+        #serviceId: config-server
         
 
 eureka:

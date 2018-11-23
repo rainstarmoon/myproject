@@ -3,7 +3,7 @@ server:
     
 spring:
   profiles:
-    active: common,dev,mvc
+    active: common,dev,mvc,log
   application:
     name: login
 

@@ -17,7 +17,7 @@
 	</parent>
 
 	<modules>
-		<module>../base</module>
+		<module>../base-lib</module>
 		<module>../face-recognition</module>
 		<module>../login</module>
 		<module>../page</module>

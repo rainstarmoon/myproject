@@ -16,7 +16,7 @@
 	
 		<dependency>
 			<groupId>com.myproject</groupId>
-			<artifactId>base</artifactId>
+			<artifactId>base-lib</artifactId>
 		</dependency>
 
 		<dependency>
